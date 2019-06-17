@@ -6,7 +6,7 @@ cc_library(
   name = "snappy",
   copts = COPTS,
   srcs = ["snappy.cc"],
-  hdrs = ["snappy.h"],
+  hdrs = ["config.h", "snappy-stubs-public.h", "snappy-sinksource.h", "snappy.h"],
   deps = [
     ":snappy-internal"
   ]
@@ -43,7 +43,7 @@ cc_library(
   name = "snappy-stubs-internal",
   copts = COPTS,
   srcs = ["snappy-stubs-internal.cc"],
-  hdrs = ["snappy-stubs-internal.h", "config.h"],
+  hdrs = ["snappy-stubs-internal.h", "snappy-stubs-public.h", "config.h"],
   deps = [
   ]
 )
