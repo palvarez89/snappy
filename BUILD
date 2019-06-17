@@ -66,6 +66,13 @@ cc_library(
   ]
 )
 
+filegroup(
+    name = "testdata",
+    srcs = glob([
+        "testdata/*",
+    ]),
+)
+
 cc_test(
   name = "snappy_unittest",
   copts = COPTS,
@@ -76,6 +83,9 @@ cc_test(
     ":snappy-test",
     ":snappy",
     ":snappy-sinksource",
+  ],
+  data = [
+    ":testdata",
   ],
   linkopts = ["-llzo2 -lz"]
 )
