@@ -69,10 +69,13 @@ cc_library(
 cc_test(
   name = "snappy_unittest",
   copts = COPTS,
-  srcs = ["snappy_unittest.cc"],
+  srcs = ["snappy.h", "snappy-sinksource.h", "snappy_unittest.cc"],
   deps = [
     "@gtest//:main",
     ":snappy-internal",
     ":snappy-test",
-  ]
+    ":snappy",
+    ":snappy-sinksource",
+  ],
+  linkopts = ["-llzo2 -lz"]
 )
